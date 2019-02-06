@@ -11,7 +11,3 @@ cd Pharo7.0-32bit-iot
 wget "https://files.pharo.org/get-files/70/pharo.zip"
 unzip -o pharo.zip
 rm -rf pharo.zip
-# ArmVM:
-wget "http://files.pharo.org/vm/pharo-spur32/linux/armv6/latest.zip"
-unzip -o latest.zip
-rm -rf latest.zip

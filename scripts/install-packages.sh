@@ -14,3 +14,8 @@ Metacello new
   repository: 'github://pharo-iot/PharoThings/src';
   load: 'RemoteDev'.
 "
+
+# ArmVM:
+wget "http://files.pharo.org/vm/pharo-spur32/linux/armv6/latest.zip"
+unzip -o latest.zip
+rm -rf latest.zip
