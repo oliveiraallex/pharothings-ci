@@ -1,7 +1,11 @@
 language: c
 
+addons:
+  apt:
+    packages:
+      - git
+
 install: 
   - ./scripts/download.sh
   - ./scripts/install-packages.sh
-
-
+  - ./scripts/upload.sh

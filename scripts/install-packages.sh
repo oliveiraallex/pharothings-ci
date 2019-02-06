@@ -13,4 +13,3 @@ Metacello new
   repository: 'github://pharo-iot/PharoThings/src';
   load: 'RemoteDev'.
 "
-
