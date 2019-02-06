@@ -10,4 +10,4 @@ git checkout master
 git add download
 git add -u
 git commit -m "Travis upload $(date +%Y%m%d%H%M)"
-git push ${GH}@github.com/oliveiraallex/pharothings-ci.git > /dev/null 2>&1
+git push http://oliveiraallex:${GH}@github.com/oliveiraallex/pharothings-ci.git > /dev/null 2>&1
