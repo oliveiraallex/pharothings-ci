@@ -3,11 +3,11 @@
 set -ex
 
 mkdir download
-zip -r download/Pharo7.0-32bit-iot-$(date +%Y%m%d%H%M).zip  Pharo7.0-32bit-iot/
+zip -qr download/Pharo7.0-32bit-iot-$(date +%Y%m%d%H%M).zip  Pharo7.0-32bit-iot/
 rm -rf Pharo7.0-32bit-iot
 
 git checkout master
 git add download
 git add -u
-git commit
+git commit -m "Travis upload $(date +%Y%m%d%H%M)"
 git push git@github.com:oliveiraallex/pharothings-ci.git
