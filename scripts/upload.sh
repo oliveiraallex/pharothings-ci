@@ -2,7 +2,6 @@
 
 set -ex
 
-cd ..
 mkdir download
 zip -r download/Pharo7.0-32bit-iot-$(date +%Y%m%d%H%M).zip  Pharo7.0-32bit-iot/
 rm -rf Pharo7.0-32bit-iot

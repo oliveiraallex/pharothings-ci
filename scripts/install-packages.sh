@@ -2,6 +2,7 @@
 
 set -ex
 
+cd Pharo7.0-32bit-iot
 ./pharo Pharo7*.image eval "
 Iceberg enableMetacelloIntegration: true.
 Metacello new
