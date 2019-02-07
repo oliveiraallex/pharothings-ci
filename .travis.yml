@@ -15,3 +15,6 @@ install:
   - ./scripts/download.sh
   - ./scripts/install-packages.sh
   - ./scripts/upload.sh
+  
+script:
+  - echo " "
