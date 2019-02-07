@@ -2,7 +2,7 @@
 
 set -ex
 
-FILE_DATE=(date +%Y%m%d%H%M)
+FILE_DATE=$(date +%Y%m%d%H%M)
 FILE_PHARO=Pharo7.0-32bit-iot
 FILE_NAME=$FILE_PHARO-$FILE_DATE.zip
 
