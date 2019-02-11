@@ -31,11 +31,8 @@ Smalltalk saveSession.
 
 # Pharo 7 IoT Multiplataform Server Client
 cp -r $TEMP_RASP_SERCLI/ $TEMP_MULTI_SERCLI
-ls 
-ls $TEMP_RASP_SERCLI
-ls $TEMP_MULTI_SERCLI
-ls $TEMP_MULTI_SERCLI/lib/pharo/5*/
-mv $TEMP_MULTI_SERCLI/lib/pharo/5*/pharo $TEMP_MULTI_SERCLI/lib/pharo/5*/pharo-32
+LIB_FOLDER=$(ls $TEMP_MULTI_SERCLI/lib/pharo/)
+mv $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo-32
 unzip -qo tmp/pharo64-linux-stable.zip
 cp pharo64-linux-stable/* $TEMP_MULTI_SERCLI/
 cp $TEMP_MULTI_SERCLI/lib/pharo/5*/pharo $TEMP_MULTI_SERCLI/lib/pharo/5*/pharo-64
@@ -57,10 +54,9 @@ Smalltalk saveSession.
 # Adding VMs
 # ArmVM:
 TEMP_ARM_VM=temp-arm-vm
-LINUX_VM_FOLDER=$(ls $TEMP_MULTI_SERCLI/lib/pharo/)
 unzip -qo tmp/latst.zip -d $TEMP_ARM_VM
-mv $TEMP_ARM_VM/lib/pharo/5* $TEMP_ARM_VM/lib/pharo/$LINUX_VM_FOLDER
-cp $TEMP_ARM_VM/lib/pharo/5*/pharo $TEMP_ARM_VM/lib/pharo/5*/pharo-arm
+mv $TEMP_ARM_VM/lib/pharo/5* $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER
+cp $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo-arm
 cp $TEMP_ARM_VM/ $TEMP_MULTI_SERCLI/
 cp $TEMP_ARM_VM/ $TEMP_RASP_SERCLI/
 cp $TEMP_ARM_VM/ $TEMP_RASP_SER/
@@ -72,4 +68,4 @@ cp pharo-win-stable/* $TEMP_MULTI_SERCLI/
 # Mac32 VM
 unzip -qo tmp/pharo-mac-stable.zip -d $TEMP_MULTI_SERCLI
 
-rm -rf tmp $TEMP_ARM_VM pharo64-linux-stable pharo-win-stable pharo64git
+rm -rf tmp $TEMP_ARM_VM pharo64-linux-stable pharo-win-stable pharo64
