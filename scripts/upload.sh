@@ -2,13 +2,16 @@
 
 set -ex
 
+TEMP_RASP_SER=pharo7-iot-rasp-ser
+TEMP_RASP_SERCLI=pharo7-iot-rasp-ser-cli
+TEMP_MULTI_SERCLI=pharo7-iot-multi-ser-cli
 FILE_DATE=$(date +%Y%m%d%H%M)
-FILE_PHARO=Pharo7.0-32bit-iot
-FILE_NAME=$FILE_PHARO-$FILE_DATE.zip
 
-zip -qr download/$FILE_NAME  $FILE_PHARO
-cp download/$FILE_NAME download/$FILE_PHARO-latest.zip
-rm -rf $FILE_PHARO
+zip -qr $TEMP_RASP_SER download/$TEMP_RASP_SER-$FILE_DATE.zip
+zip -qr $TEMP_RASP_SERCLI download/$TEMP_RASP_SERCLI-$FILE_DATE.zip
+zip -qr $TEMP_MULTI_SERCLI download/$TEMP_MULTI_SERCLI-$FILE_DATE.zip
+
+rm -rf $TEMP_RASP_SER TEMP_RASP_SERCLI TEMP_MULTI_SERCLI
 
 git checkout master
 git add download

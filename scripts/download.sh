@@ -2,14 +2,25 @@
 
 set -ex
 
-FILE_PHARO=Pharo7.0-32bit-iot
-
+mkdir tmp
+cd tmp
 # PharoVM 7.0 for Linux 32bit: 
 wget "https://files.pharo.org/get-files/70/pharo-linux-stable.zip"
-unzip pharo-linux-stable.zip -d $FILE_PHARO
-rm -rf pharo-linux-stable.zip
-cd $FILE_PHARO
+
+# PharoVM 7.0 for Linux 64bit: 
+wget "https://files.pharo.org/get-files/70/pharo64-linux-stable.zip"
+
+# PharoVM 7.0 for Windows 32bit: 
+wget "https://files.pharo.org/get-files/70/pharo-win-stable.zip"
+
+# PharoVM 7.0 for Mac OSX 32bit: 
+wget "https://files.pharo.org/get-files/70/pharo-mac-stable.zip"
+
+# PharoArmVM to Raspberry:
+wget "http://files.pharo.org/vm/pharo-spur32/linux/armv6/latest.zip"
+
 # Pharo image 32bit:
 wget "https://files.pharo.org/get-files/70/pharo.zip"
-unzip -o pharo.zip
-rm -rf pharo.zip
+
+# Pharo image 64bit:
+wget "https://files.pharo.org/get-files/70/pharo64.zip"
