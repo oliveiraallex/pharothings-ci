@@ -55,7 +55,7 @@ Smalltalk saveSession.
 
 # Adding VMs
 # ArmVM:
-TEMP_ARM_VM=temp-arm-vm
+TEMP_ARM_VM=tmp/temp-arm-vm
 unzip -qo tmp/latest.zip -d $TEMP_ARM_VM
 mv $TEMP_ARM_VM/lib/pharo/5* $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER
 cp -rf $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo-arm
@@ -64,10 +64,10 @@ cp -rf $TEMP_ARM_VM/ $TEMP_RASP_SERCLI/
 cp -rf $TEMP_ARM_VM/ $TEMP_RASP_SER/
  
 # Windows32 VM
-unzip -qo tmp/pharo-win-stable.zip
-cp -rf pharo-win-stable/* $TEMP_MULTI_SERCLI/
+unzip -qo tmp/pharo-win-stable.zip $TEMP_MULTI_SERCLI
 
 # Mac32 VM
 unzip -qo tmp/pharo-mac-stable.zip -d $TEMP_MULTI_SERCLI
 
-rm -rf tmp $TEMP_ARM_VM pharo64-linux-stable pharo-win-stable pharo64
+# Clean up temp folders
+rm -rf tmp
