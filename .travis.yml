@@ -10,6 +10,7 @@ addons:
       - libbz2-1.0:i386
       - libssl1.0.0:i386
       - libfreetype6:i386
+      - software-properties-common
 
 install: 
   - ./scripts/download.sh
