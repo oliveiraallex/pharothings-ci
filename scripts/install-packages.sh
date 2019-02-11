@@ -34,12 +34,12 @@ cp -r $TEMP_RASP_SERCLI/ $TEMP_MULTI_SERCLI
 LIB_FOLDER=$(ls $TEMP_MULTI_SERCLI/lib/pharo/)
 mv $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo-32
 unzip -qo tmp/pharo64-linux-stable.zip -d $TEMP_MULTI_SERCLI
-ls $TEMP_MULTI_SERCLI
+ls -l
+ls -l $TEMP_MULTI_SERCLI
 cp $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo-64
-unzip -qo tmp/pharo64.zip -d pharo64
-ls -l 
-ls pharo64
-cp pharo64/* $TEMP_MULTI_SERCLI/
+unzip -qo tmp/pharo64.zip -d TEMP_MULTI_SERCLI
+ls -l
+ls -l TEMP_MULTI_SERCLI
 $TEMP_MULTI_SERCLI/pharo --nodisplay $TEMP_MULTI_SERCLI/Pharo7*64*.image eval "
 Iceberg enableMetacelloIntegration: true.
 Metacello new
@@ -56,13 +56,13 @@ Smalltalk saveSession.
 # Adding VMs
 # ArmVM:
 TEMP_ARM_VM=temp-arm-vm
-unzip -qo tmp/latst.zip -d $TEMP_ARM_VM
+unzip -qo tmp/latest.zip -d $TEMP_ARM_VM
 mv $TEMP_ARM_VM/lib/pharo/5* $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER
 cp $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo-arm
 cp $TEMP_ARM_VM/ $TEMP_MULTI_SERCLI/
 cp $TEMP_ARM_VM/ $TEMP_RASP_SERCLI/
 cp $TEMP_ARM_VM/ $TEMP_RASP_SER/
-
+ 
 # Windows32 VM
 unzip -qo tmp/pharo-win-stable.zip
 cp pharo-win-stable/* $TEMP_MULTI_SERCLI/
