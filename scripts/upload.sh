@@ -17,4 +17,4 @@ git checkout master
 git add download
 git add -u
 git commit -m "Travis upload $FILE_DATE"
-git push http://oliveiraallex:${GH}@github.com/oliveiraallex/pharothings-ci.git > /dev/null 2>&1
+git push http://oliveiraallex:${GH}@github.com/oliveiraallex/pharothings-ci.git
