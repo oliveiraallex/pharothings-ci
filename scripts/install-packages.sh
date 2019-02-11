@@ -33,10 +33,8 @@ Smalltalk saveSession.
 cp -r $TEMP_RASP_SERCLI/ $TEMP_MULTI_SERCLI
 LIB_FOLDER=$(ls $TEMP_MULTI_SERCLI/lib/pharo/)
 mv $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo-32
-unzip -qo tmp/pharo64-linux-stable.zip -d pharo64-linux-stable
-ls -l
-ls pharo64-linux-stable
-cp -r pharo64-linux-stable/* $TEMP_MULTI_SERCLI/
+unzip -qo tmp/pharo64-linux-stable.zip -d $TEMP_MULTI_SERCLI
+ls $TEMP_MULTI_SERCLI
 cp $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo-64
 unzip -qo tmp/pharo64.zip -d pharo64
 ls -l 
