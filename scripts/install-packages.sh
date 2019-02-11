@@ -31,6 +31,10 @@ Smalltalk saveSession.
 
 # Pharo 7 IoT Multiplataform Server Client
 cp -r $TEMP_RASP_SERCLI/ $TEMP_MULTI_SERCLI
+ls 
+ls $TEMP_RASP_SERCLI
+ls $TEMP_MULTI_SERCLI
+ls $TEMP_MULTI_SERCLI/lib/pharo/5*/
 mv $TEMP_MULTI_SERCLI/lib/pharo/5*/pharo $TEMP_MULTI_SERCLI/lib/pharo/5*/pharo-32
 unzip -qo tmp/pharo64-linux-stable.zip
 cp pharo64-linux-stable/* $TEMP_MULTI_SERCLI/
@@ -68,4 +72,4 @@ cp pharo-win-stable/* $TEMP_MULTI_SERCLI/
 # Mac32 VM
 unzip -qo tmp/pharo-mac-stable.zip -d $TEMP_MULTI_SERCLI
 
-rm -rf tmp $TEMP_ARM_VM pharo64-linux-stable pharo-win-stable pharo64
+rm -rf tmp $TEMP_ARM_VM pharo64-linux-stable pharo-win-stable pharo64git
