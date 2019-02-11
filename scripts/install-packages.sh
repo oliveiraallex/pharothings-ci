@@ -60,7 +60,7 @@ cp -rf $TEMP_ARM_VM/ $TEMP_RASP_SERCLI/
 cp -rf $TEMP_ARM_VM/ $TEMP_RASP_SER/
  
 # Windows32 VM
-unzip -qo tmp/pharo-win-stable.zip $TEMP_MULTI_SERCLI/
+unzip -qo tmp/pharo-win-stable.zip -d $TEMP_MULTI_SERCLI/
 
 # Mac32 VM
 unzip -qo tmp/pharo-mac-stable.zip -d $TEMP_MULTI_SERCLI/
