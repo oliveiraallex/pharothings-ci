@@ -37,9 +37,9 @@ unzip -qo tmp/pharo64-linux-stable.zip -d $TEMP_MULTI_SERCLI
 ls -l
 ls -l $TEMP_MULTI_SERCLI
 cp $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo-64
-unzip -qo tmp/pharo64.zip -d TEMP_MULTI_SERCLI
+unzip -qo tmp/pharo64.zip -d $TEMP_MULTI_SERCLI
 ls -l
-ls -l TEMP_MULTI_SERCLI
+ls -l $TEMP_MULTI_SERCLI
 $TEMP_MULTI_SERCLI/pharo --nodisplay $TEMP_MULTI_SERCLI/Pharo7*64*.image eval "
 Iceberg enableMetacelloIntegration: true.
 Metacello new
