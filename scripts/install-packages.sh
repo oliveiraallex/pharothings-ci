@@ -58,14 +58,14 @@ Smalltalk saveSession.
 TEMP_ARM_VM=temp-arm-vm
 unzip -qo tmp/latest.zip -d $TEMP_ARM_VM
 mv $TEMP_ARM_VM/lib/pharo/5* $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER
-cp $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo-arm
-cp $TEMP_ARM_VM/ $TEMP_MULTI_SERCLI/
-cp $TEMP_ARM_VM/ $TEMP_RASP_SERCLI/
-cp $TEMP_ARM_VM/ $TEMP_RASP_SER/
+cp -rf $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo-arm
+cp -rf $TEMP_ARM_VM/ $TEMP_MULTI_SERCLI/
+cp -rf $TEMP_ARM_VM/ $TEMP_RASP_SERCLI/
+cp -rf $TEMP_ARM_VM/ $TEMP_RASP_SER/
  
 # Windows32 VM
 unzip -qo tmp/pharo-win-stable.zip
-cp pharo-win-stable/* $TEMP_MULTI_SERCLI/
+cp -rf pharo-win-stable/* $TEMP_MULTI_SERCLI/
 
 # Mac32 VM
 unzip -qo tmp/pharo-mac-stable.zip -d $TEMP_MULTI_SERCLI
