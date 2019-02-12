@@ -13,12 +13,6 @@ zip -qr download/$TEMP_MULTI_SERCLI-$FILE_DATE.zip $TEMP_MULTI_SERCLI
 
 rm -rf $TEMP_RASP_SER TEMP_RASP_SERCLI TEMP_MULTI_SERCLI
 
-sudo add-apt-repository -y ppa:git-core/ppa > /dev/null 2>&1
-travis_apt_get_update
-curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-sudo -E apt-get install git-lfs
-git lfs install
-
 git lfs track "*.zip"
 git add .gitattributes
 
