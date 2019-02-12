@@ -3,7 +3,7 @@ language: c
 addons:
   apt:
     sources:
-      - sourceline: 'ppa:git-core/ppa'
+      - git-core
     packages:
       - git
       - git-lfs
