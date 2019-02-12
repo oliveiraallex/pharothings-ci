@@ -66,4 +66,4 @@ unzip -qo tmp/pharo-win-stable.zip -d $TEMP_MULTI_SERCLI/
 unzip -qo tmp/pharo-mac-stable.zip -d $TEMP_MULTI_SERCLI/
 
 # Clean up temp folders
-rm -rf tmp
+sudo rm -rf tmp
