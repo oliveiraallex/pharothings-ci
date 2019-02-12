@@ -16,7 +16,7 @@ Metacello new
   repository: 'github://pharo-iot/PharoThings/src';
   load: #(RemoteDevServer Raspberry).
 Smalltalk saveSession. 
-"
+"  > /dev/null 2>&1
 
 # Pharo 7 IoT Raspberry Server Client
 cp -r $TEMP_RASP_SER/ $TEMP_RASP_SERCLI
@@ -27,7 +27,7 @@ Metacello new
   repository: 'github://pharo-iot/PharoThings/src';
   load: 'RemoteDev'.
 Smalltalk saveSession. 
-"
+"  > /dev/null 2>&1
 
 # Pharo 7 IoT Multiplataform Server Client
 cp -r $TEMP_RASP_SERCLI/ $TEMP_MULTI_SERCLI
@@ -47,7 +47,7 @@ Metacello new
   repository: 'github://pharo-iot/PharoThings/src';
   load: #(RemoteDevServer Raspberry).
 Smalltalk saveSession. 
-"
+"  > /dev/null 2>&1
 
 # Adding VMs
 # ArmVM:
