@@ -13,14 +13,14 @@ zip -qr download/$TEMP_MULTI_SERCLI-$FILE_DATE.zip $TEMP_MULTI_SERCLI
 
 sudo rm -rf $TEMP_RASP_SER TEMP_RASP_SERCLI TEMP_MULTI_SERCLI
 
+sudo git lfs track "*.zip"
+sudo git add .gitattributes
+
 sudo git config --global user.email "allex.oliveira@yahoo.com.br"
 sudo git config --global user.name "Allex Oliveira"
 
-git lfs track "*.zip"
-git add .gitattributes
-
-git checkout master
-git add download
-git add -u
-git commit -m "Travis upload $FILE_DATE"
-git push http://oliveiraallex:${GH}@github.com/oliveiraallex/pharothings-ci.git
+sudo git checkout master
+sudo git add download
+sudo git add -u
+sudo git commit -m "Travis upload $FILE_DATE"
+sudo git push http://oliveiraallex:${GH}@github.com/oliveiraallex/pharothings-ci.git
