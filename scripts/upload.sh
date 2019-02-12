@@ -13,6 +13,9 @@ zip -qr download/$TEMP_MULTI_SERCLI-$FILE_DATE.zip $TEMP_MULTI_SERCLI
 
 sudo rm -rf $TEMP_RASP_SER TEMP_RASP_SERCLI TEMP_MULTI_SERCLI
 
+git config --global user.email "allex.oliveira@yahoo.com.br"
+git config --global user.name "Allex Oliveira"
+
 git lfs track "*.zip"
 git add .gitattributes
 
