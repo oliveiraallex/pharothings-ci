@@ -10,11 +10,8 @@ before_install:
   
 addons:
   apt:
-    sources:
-      - git-core
     packages:
       - git
-      - git-lfs
       - libasound2:i386
       - libcairo2:i386
       - libz1:i386
