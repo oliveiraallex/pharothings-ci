@@ -2,8 +2,11 @@ language: c
 
 addons:
   apt:
+    sources:
+      - sourceline: 'ppa:git-core/ppa'
     packages:
       - git
+      - git-lfs
       - libasound2:i386
       - libcairo2:i386
       - libz1:i386
