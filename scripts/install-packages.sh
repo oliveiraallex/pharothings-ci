@@ -9,7 +9,7 @@ TEMP_MULTI_SERCLI=pharo7-iot-multi-ser-cli
 # Pharo 7 IoT Raspberry Server
 unzip -q tmp/pharo-linux-stable.zip -d $TEMP_RASP_SER
 unzip -qo tmp/pharo.zip -d $TEMP_RASP_SER
-$TEMP_RASP_SER/pharo --nodisplay $TEMP_RASP_SER/Pharo7*.image eval "
+sudo $TEMP_RASP_SER/pharo --nodisplay $TEMP_RASP_SER/Pharo7*.image eval "
 Iceberg enableMetacelloIntegration: true.
 Metacello new
   baseline: 'PharoThings';
@@ -20,7 +20,7 @@ Smalltalk saveSession.
 
 # Pharo 7 IoT Raspberry Server Client
 cp -r $TEMP_RASP_SER/ $TEMP_RASP_SERCLI
-$TEMP_RASP_SERCLI/pharo --nodisplay $TEMP_RASP_SERCLI/Pharo7*.image eval "
+sudo $TEMP_RASP_SERCLI/pharo --nodisplay $TEMP_RASP_SERCLI/Pharo7*.image eval "
 Iceberg enableMetacelloIntegration: true.
 Metacello new
   baseline: 'PharoThings';
@@ -36,7 +36,7 @@ mv $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo $TEMP_MULTI_SERCLI/lib/pharo/$
 unzip -qo tmp/pharo64-linux-stable.zip -d $TEMP_MULTI_SERCLI
 cp $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo $TEMP_MULTI_SERCLI/lib/pharo/$LIB_FOLDER/pharo-64
 unzip -qo tmp/pharo64.zip -d $TEMP_MULTI_SERCLI
-$TEMP_MULTI_SERCLI/pharo --nodisplay $TEMP_MULTI_SERCLI/Pharo7*64*.image eval "
+sudo $TEMP_MULTI_SERCLI/pharo --nodisplay $TEMP_MULTI_SERCLI/Pharo7*64*.image eval "
 Iceberg enableMetacelloIntegration: true.
 Metacello new
   baseline: 'PharoThings';
