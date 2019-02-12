@@ -13,7 +13,7 @@ zip -qr download/$TEMP_MULTI_SERCLI-$FILE_DATE.zip $TEMP_MULTI_SERCLI
 
 rm -rf $TEMP_RASP_SER TEMP_RASP_SERCLI TEMP_MULTI_SERCLI
 
-add-apt-repository ppa:git-core/ppa
+sudo add-apt-repository ppa:git-core/ppa
 apt-get update
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
 sudo apt-get install git-lfs
