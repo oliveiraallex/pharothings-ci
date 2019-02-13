@@ -6,7 +6,7 @@ TEMP_RASP_SER=pharo7-iot-rasp-ser
 TEMP_RASP_SERCLI=pharo7-iot-rasp-ser-cli
 TEMP_MULTI_SERCLI=pharo7-iot-multi-ser-cli
 FILE_DATE=$(date +%Y%m%d%H%M)
-
+mkdir download
 rm -rf download/*.*
 
 zip -qr download/$TEMP_RASP_SER-$FILE_DATE.zip $TEMP_RASP_SER
