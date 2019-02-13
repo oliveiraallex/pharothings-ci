@@ -17,6 +17,7 @@ zip -qr download/$TEMP_MULTI_SERCLI-$FILE_DATE.zip $TEMP_MULTI_SERCLI
 
 sudo rm -rf $TEMP_RASP_SER $TEMP_RASP_SERCLI $TEMP_MULTI_SERCLI
 
+sudo git lfs clean
 sudo git lfs track "*.zip"
 sudo git add .gitattributes
 
