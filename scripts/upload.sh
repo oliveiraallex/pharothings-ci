@@ -28,3 +28,5 @@ sudo git add download
 sudo git add -u
 sudo git commit -m "Travis upload $FILE_DATE"
 sudo git push http://oliveiraallex:${GH}@github.com/oliveiraallex/pharothings-ci.git
+
+
