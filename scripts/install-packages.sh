@@ -55,6 +55,12 @@ TEMP_ARM_VM=tmp/temp-arm-vm
 unzip -qo tmp/latest.zip -d $TEMP_ARM_VM
 mv $TEMP_ARM_VM/lib/pharo/5* $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER
 cp -rf $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo-arm
+cp $TEMP_ARM_VM/pharo $TEMP_ARM_VM/pharo-linux
+(head -n3 $TEMP_ARM_VM/pharo-linux; echo "BIN=\`/usr/bin/dirname \"\$0\"\`/lib/pharo/$LIB_FOLDER /n EXE=pharo-32 /n [[ $(uname -m) = armv7l ]] && EXE=pharo-arm /n echo $EXE"; tail -n+5 $TEMP_ARM_VM/pharo-linux) > $TEMP_ARM_VM/pharo
+cat $TEMP_ARM_VM/pharo
+(head -n3 $TEMP_ARM_VM/pharo-linux; echo "BIN=\`/usr/bin/dirname \"\$0\"\`/../lib/pharo/$LIB_FOLDER /n EXE=pharo-32 /n [[ $(uname -m) = x86_64 ]] && EXE=pharo-64 /n echo $EXE"; tail -n+5 $TEMP_ARM_VM/pharo-linux) > $TEMP_ARM_VM/bin/pharo
+cat $TEMP_ARM_VM/bin/pharo
+rm -rf $TEMP_ARM_VM/pharo-linux
 cp -rf $TEMP_ARM_VM/* $TEMP_MULTI_SERCLI/
 cp -rf $TEMP_ARM_VM/* $TEMP_RASP_SERCLI/
 cp -rf $TEMP_ARM_VM/* $TEMP_RASP_SER/
@@ -63,11 +69,7 @@ cp -rf $TEMP_ARM_VM/* $TEMP_RASP_SER/
 unzip -qo tmp/pharo-win-stable.zip -d $TEMP_MULTI_SERCLI/
 
 # Mac32 VM
-unzip -qo tmp/pharo-mac-stable.zip -d tmp
-ls -la tmp
-ls -la tmp/Pharo.app
-mv tmp/Pharo.app $TEMP_MULTI_SERCLI/Pharo7.app
-ls -la tmp
+unzip -qo tmp/pharo-mac-stable.zip -d $TEMP_MULTI_SERCLI/
 
 # Clean up temp folders
 sudo rm -rf tmp
