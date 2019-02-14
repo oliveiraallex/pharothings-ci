@@ -29,4 +29,5 @@ deploy:
   skip_cleanup: true
   file: download/*.zip
   on:
+    tags: true
     repo: oliveiraallex/pharothings-ci
