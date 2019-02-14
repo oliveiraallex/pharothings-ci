@@ -1,29 +1,28 @@
 language: c
 
-before_install:
-  - sudo apt-get install software-properties-common
-  - sudo add-apt-repository -y ppa:git-core/ppa > /dev/null 2>&1
-  - sudo apt-get update
-  - curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
-  - sudo apt-get install git-lfs 
-  - sudo git lfs install
-  
 addons:
   apt:
     packages:
-      - git
-      - libasound2:i386
-      - libcairo2:i386
-      - libz1:i386
-      - libbz2-1.0:i386
-      - libssl1.0.0:i386
-      - libfreetype6:i386
-      - software-properties-common
+    - git
+    - libasound2:i386
+    - libcairo2:i386
+    - libz1:i386
+    - libbz2-1.0:i386
+    - libssl1.0.0:i386
+    - libfreetype6:i386
 
-install: 
-  - ./scripts/download.sh
-  - ./scripts/install-packages.sh
-  - ./scripts/upload.sh
-  
+install:
+- "./scripts/download.sh"
+- "./scripts/install-packages.sh"
+- "./scripts/upload.sh"
+
 script:
-  - echo " "
+- echo " "
+
+deploy:
+  provider: releases
+  api_key:
+    secure: hJMfA4Suc/3iW5RLNYwt5tTWPRnOL2z5sFBUSyZjuJfE7U833FISh6E8Pz8jxBcreMJ04wT01n0C4Ss8hp6B2MzFtc4F1Sit2Ty6TbHm9v7hQtyfrPBg7NqymIhaOzt+Ni2+dBx2Yqtf8ng3DpMxWKkVzNIdnEZX0JR42g987pkExOy94Jv0060KUd7HvWlKj3mgL0xj4qJHe13LYfDk+EFTFiPgT9OUyyZo3A9MTOPv5ch9PB3BElPcO/GC9JQTkvDye3QaRPT4pzk/BHiFsNS7U0iZ54NqZ4zUHK8CaSPFfJi3Ak2DG8g0gdctau9m5XZfgdBfO7/IJssgw/oclesjI5kQFigzu0g4sTZOOj5mx7RaTSxS8f+wvAWqgoXL+DgsBX3eLnTQ1hgccjXJnQ6fPREzzpx2N78P6BJlq21aOUg8G4R370rO1zFw0qtigzfgUGZ0OWiJU/QRlsPOvNKZuOl7SmgapClB8aXLYByMTWvj/ljHg6SI8Kp6EMu7JXB2EwYeVUB/7fdbnTx5NfS29PJPfYRWBk/1aQrn2Xz45tC7xYEUzoxtz17freDZWHA8wb1deYiFulE1Rt3LhuN7qvPUKVSw0z+vPGFqVV9WM4FBQVBVZZCp3ijbanfnvwxlb7hvSQPjEdQXktyVWw1z9ELvBkGI1qEoLbFSSrk=
+  file: download/*.zip
+  on:
+    repo: oliveiraallex/pharothings-ci

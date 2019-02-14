@@ -15,6 +15,8 @@ zip -qr download/$TEMP_RASP_SER-$FILE_DATE.zip $TEMP_RASP_SER
 zip -qr download/$TEMP_RASP_SERCLI-$FILE_DATE.zip $TEMP_RASP_SERCLI
 zip -qr download/$TEMP_MULTI_SERCLI-$FILE_DATE.zip $TEMP_MULTI_SERCLI
 
+exit 1
+
 sudo rm -rf $TEMP_RASP_SER $TEMP_RASP_SERCLI $TEMP_MULTI_SERCLI
 
 # sudo git lfs clean
