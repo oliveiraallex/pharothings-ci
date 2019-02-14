@@ -56,10 +56,12 @@ unzip -qo tmp/latest.zip -d $TEMP_ARM_VM
 mv $TEMP_ARM_VM/lib/pharo/5* $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER
 cp -rf $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo $TEMP_ARM_VM/lib/pharo/$LIB_FOLDER/pharo-arm
 cp $TEMP_ARM_VM/pharo $TEMP_ARM_VM/pharo-linux
-(head -n3 $TEMP_ARM_VM/pharo-linux; echo "BIN=\`/usr/bin/dirname \"\$0\"\`/lib/pharo/$LIB_FOLDER /n EXE=pharo-32 /n [[ $(uname -m) = armv7l ]] && EXE=pharo-arm /n echo $EXE"; tail -n+5 $TEMP_ARM_VM/pharo-linux) > $TEMP_ARM_VM/pharo
+(head -n3 $TEMP_ARM_VM/pharo-linux; echo "BIN=\`/usr/bin/dirname \"\$0\"\`/lib/pharo/$LIB_FOLDER"; echo "EXE=pharo-32"; echo "[[ $(uname -m) = armv7l ]] && EXE=pharo-arm"; echo "$EXE"; tail -n+5 $TEMP_ARM_VM/pharo-linux) > $TEMP_ARM_VM/pharo
 cat $TEMP_ARM_VM/pharo
-(head -n3 $TEMP_ARM_VM/pharo-linux; echo "BIN=\`/usr/bin/dirname \"\$0\"\`/../lib/pharo/$LIB_FOLDER /n EXE=pharo-32 /n [[ $(uname -m) = x86_64 ]] && EXE=pharo-64 /n echo $EXE"; tail -n+5 $TEMP_ARM_VM/pharo-linux) > $TEMP_ARM_VM/bin/pharo
+sudo $TEMP_ARM_VM/pharo
+(head -n3 $TEMP_ARM_VM/pharo-linux; echo "BIN=\`/usr/bin/dirname \"\$0\"\`/../lib/pharo/$LIB_FOLDER"; echo "EXE=pharo-32"; echo "[[ $(uname -m) = armv7l ]] && EXE=pharo-arm"; echo "$EXE"; tail -n+5 $TEMP_ARM_VM/pharo-linux) > $TEMP_ARM_VM/bin/pharo
 cat $TEMP_ARM_VM/bin/pharo
+chmod +x $TEMP_ARM_VM/bin/pharo
 rm -rf $TEMP_ARM_VM/pharo-linux
 cp -rf $TEMP_ARM_VM/* $TEMP_MULTI_SERCLI/
 cp -rf $TEMP_ARM_VM/* $TEMP_RASP_SERCLI/
