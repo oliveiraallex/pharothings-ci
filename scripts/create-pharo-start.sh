@@ -122,6 +122,6 @@ create_vm_script "pharo-ui"
 
 echo '#!/bin/sh
 vm/arm/pharo --headless PharoThings32.image remotePharo startServerOnPort=40423' > tmp/pharo-server
-chmod +x pharo-server
+chmod +x tmp/pharo-server
 
 exit
