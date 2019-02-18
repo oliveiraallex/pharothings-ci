@@ -16,6 +16,7 @@ addons:
 
 install:
 - "./scripts/download.sh"
+- "./scripts/create-pharo-start.sh"
 - "./scripts/install-packages.sh"
 - "./scripts/upload.sh"
 

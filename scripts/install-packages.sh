@@ -26,31 +26,37 @@ mv Pharo.changes PharoThings32.changes
 cd ../..
 ./tmp/pharo32/pharo tmp/$TEMP_RASP_SER/PharoThings32.image eval "
 Iceberg enableMetacelloIntegration: true.
-\"Metacello new
+Metacello new
   baseline: 'PharoThings';
   repository: 'github://pharo-iot/PharoThings/src';
-  load: #(RemoteDevServer Raspberry).\"
+  load: #(RemoteDevServer Raspberry).
 Smalltalk saveSession. 
 "   > /dev/null 2>&1
 mkdir $TEMP_RASP_SER
 cp tmp/$TEMP_RASP_SER/PharoThings32.image $TEMP_RASP_SER
 cp tmp/$TEMP_RASP_SER/PharoThings32.changes $TEMP_RASP_SER
 cp tmp/$TEMP_RASP_SER/Pharo*.sources $TEMP_RASP_SER
+cp tmp/pharo $TEMP_RASP_SER
+cp tmp/pharo-ui $TEMP_RASP_SER
+cp tmp/pharo-server $TEMP_RASP_SER
 
 # 1.3 Pharo 7 IoT Raspberry Server Client
 cp -r tmp/$TEMP_RASP_SER/ tmp/$TEMP_RASP_SERCLI/
 ./tmp/pharo32/pharo tmp/$TEMP_RASP_SERCLI/PharoThings32.image eval "
 Iceberg enableMetacelloIntegration: true.
-\"Metacello new
+Metacello new
   baseline: 'PharoThings';
   repository: 'github://pharo-iot/PharoThings/src';
-  load: 'RemoteDev'.\"
+  load: 'RemoteDev'.
 Smalltalk saveSession. 
 "  > /dev/null 2>&1
 mkdir $TEMP_RASP_SERCLI
 cp tmp/$TEMP_RASP_SERCLI/PharoThings32.image $TEMP_RASP_SERCLI
 cp tmp/$TEMP_RASP_SERCLI/PharoThings32.changes $TEMP_RASP_SERCLI
 cp tmp/$TEMP_RASP_SERCLI/Pharo*.sources $TEMP_RASP_SERCLI
+cp tmp/pharo $TEMP_RASP_SERCLI
+cp tmp/pharo-ui $TEMP_RASP_SERCLI
+cp tmp/pharo-server $TEMP_RASP_SERCLI
 
 # 1.4 Pharo 7 IoT Multiplataform Server Client
 cp -r tmp/$TEMP_RASP_SERCLI/ tmp/$TEMP_MULTI_SERCLI/
@@ -61,14 +67,14 @@ mv Pharo.changes PharoThings64.changes
 cd ../..
 ./tmp/pharo64/pharo tmp/$TEMP_MULTI_SERCLI/PharoThings64.image eval "
 Iceberg enableMetacelloIntegration: true.
-\"Metacello new
+Metacello new
   baseline: 'PharoThings';
   repository: 'github://pharo-iot/PharoThings/src';
   load: 'RemoteDev'.
 Metacello new
   baseline: 'PharoThings';
   repository: 'github://pharo-iot/PharoThings/src';
-  load: #(RemoteDevServer Raspberry).\"
+  load: #(RemoteDevServer Raspberry).
 Smalltalk saveSession. 
 "  > /dev/null 2>&1
 mkdir $TEMP_MULTI_SERCLI
@@ -77,6 +83,9 @@ cp tmp/$TEMP_MULTI_SERCLI/PharoThings32.changes $TEMP_MULTI_SERCLI
 cp tmp/$TEMP_MULTI_SERCLI/PharoThings64.image $TEMP_MULTI_SERCLI
 cp tmp/$TEMP_MULTI_SERCLI/PharoThings64.changes $TEMP_MULTI_SERCLI
 cp tmp/$TEMP_MULTI_SERCLI/Pharo*.sources $TEMP_MULTI_SERCLI
+cp tmp/pharo $TEMP_MULTI_SERCLI
+cp tmp/pharo-ui $TEMP_MULTI_SERCLI
+cp tmp/pharo-server $TEMP_MULTI_SERCLI
 
 # Step 2 - Packaging VMs
 # 2.1 ArmVM for all packages
@@ -106,4 +115,4 @@ mkdir -p $TEMP_MULTI_SERCLI/vm/linux64
 unzip -qo tmp/pharo64-linux-stable.zip -d $TEMP_MULTI_SERCLI/vm/linux64
 
 # Clean up temp folders
-rm -rf tmp
+#rm -rf tmp
