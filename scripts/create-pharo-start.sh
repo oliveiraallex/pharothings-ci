@@ -124,4 +124,7 @@ echo '#!/bin/sh
 vm/arm/pharo --headless PharoThings32.image remotePharo startServerOnPort=40423' > tmp/pharo-server
 chmod +x tmp/pharo-server
 
+echo '@echo off
+start /min vm\win32\PharoConsole.exe PharoThings32.image' > tmp/pharo.bat
+
 exit
