@@ -25,11 +25,11 @@ mv Pharo.image PharoThings32.image
 mv Pharo.changes PharoThings32.changes
 cd ../..
 ./tmp/pharo32/pharo tmp/$TEMP_RASP_SER/PharoThings32.image eval "
-Iceberg enableMetacelloIntegration: true.
+$1 Iceberg enableMetacelloIntegration: true.
 Metacello new
   baseline: 'PharoThings';
   repository: 'github://pharo-iot/PharoThings/src';
-  load: #(RemoteDevServer Raspberry).
+  load: #(RemoteDevServer Raspberry). $1
 Smalltalk saveSession. 
 "   > /dev/null 2>&1
 mkdir $TEMP_RASP_SER
@@ -44,10 +44,10 @@ cp tmp/pharo-server $TEMP_RASP_SER
 cp -r tmp/$TEMP_RASP_SER/ tmp/$TEMP_RASP_SERCLI/
 ./tmp/pharo32/pharo tmp/$TEMP_RASP_SERCLI/PharoThings32.image eval "
 Iceberg enableMetacelloIntegration: true.
-Metacello new
+$1 Metacello new
   baseline: 'PharoThings';
   repository: 'github://pharo-iot/PharoThings/src';
-  load: 'RemoteDev'.
+  load: 'RemoteDev'. $1
 Smalltalk saveSession. 
 "  > /dev/null 2>&1
 mkdir $TEMP_RASP_SERCLI
@@ -67,14 +67,14 @@ mv Pharo.changes PharoThings64.changes
 cd ../..
 ./tmp/pharo64/pharo tmp/$TEMP_MULTI_SERCLI/PharoThings64.image eval "
 Iceberg enableMetacelloIntegration: true.
-Metacello new
+$1 Metacello new
   baseline: 'PharoThings';
   repository: 'github://pharo-iot/PharoThings/src';
   load: 'RemoteDev'.
 Metacello new
   baseline: 'PharoThings';
   repository: 'github://pharo-iot/PharoThings/src';
-  load: #(RemoteDevServer Raspberry).
+  load: #(RemoteDevServer Raspberry). $1
 Smalltalk saveSession. 
 "  > /dev/null 2>&1
 mkdir $TEMP_MULTI_SERCLI

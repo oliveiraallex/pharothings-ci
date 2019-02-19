@@ -35,7 +35,7 @@ else
     ARCH="32";
 fi
 # 1.3 Setting the correcty VM folder
-if [[ "{$OS}" = *arm* ]]; then
+if [[ "{$ARCH}" = *arm* ]]; then
     VM="arm";
 elif [[ "{$OS}" = *windows* ]]; then
     VM="win32";
@@ -66,7 +66,7 @@ elif [[ "{$VM}" = *osx32* ]]; then
     # disable parameter expansion to forward all arguments unprocessed to the VM
     set -f
     # run the VM and pass along all arguments as is
-    open "$DIR"/"vm/$VM/Pharo.app" --args "$DIR"/PharoThings32.image 
+    open "$DIR"/"vm/$VM/Pharo.app" --args "$DIR"/PharoThings32.image
 elif [[ "{$VM}" = *linux64* ]]; then
     vm/$VM/pharo PharoThings64.image ;
 elif [[ "{$VM}" = *linux32* ]]; then
@@ -74,7 +74,7 @@ elif [[ "{$VM}" = *linux32* ]]; then
 fi' >> tmp/$VM_SCRIPT
 elif [[ "{$VM_SCRIPT}" = *server* ]]; then
     echo 'if [[ "{$VM}" = *arm* ]]; then
-vm/$VM/pharo --headless PharoThings32.image remotePharo startServerOnPort=40423
+vm/$VM/pharo --headless PharoThings32.image remotePharo --startServerOnPort=40423
 elif [[ "{$VM}" = *osx32* ]]; then
     # some magic to find out the real location of this script dealing with symlinks
     DIR=`readlink "$0"` || DIR="$0";
@@ -85,15 +85,15 @@ elif [[ "{$VM}" = *osx32* ]]; then
     # disable parameter expansion to forward all arguments unprocessed to the VM
     set -f
     # run the VM and pass along all arguments as is
-    open "$DIR"/"vm/$VM/Pharo.app" --args --headless "$DIR"/PharoThings32.image remotePharo startServerOnPort=40423
+    "$DIR"/"vm/$VM/Pharo.app/Contents/MacOS/Pharo" --headless "$DIR"/PharoThings32.image remotePharo --startServerOnPort=40423
 elif [[ "{$VM}" = *linux64* ]]; then
-    vm/$VM/pharo --headless PharoThings64.image remotePharo startServerOnPort=40423
+    vm/$VM/pharo --headless PharoThings64.image remotePharo --startServerOnPort=40423
 elif [[ "{$VM}" = *linux32* ]]; then
-    vm/$VM/pharo --headless PharoThings32.image remotePharo startServerOnPort=40423
+    vm/$VM/pharo --headless PharoThings32.image remotePharo --startServerOnPort=40423
 fi' >> tmp/$VM_SCRIPT
 else
    echo 'if [[ "{$VM}" = *arm* ]]; then
-vm/$VM/pharo --headless PharoThings32.image 
+vm/$VM/pharo --headless PharoThings32.image $1 $2 $3
 elif [[ "{$VM}" = *osx32* ]]; then
     # some magic to find out the real location of this script dealing with symlinks
     DIR=`readlink "$0"` || DIR="$0";
@@ -104,11 +104,11 @@ elif [[ "{$VM}" = *osx32* ]]; then
     # disable parameter expansion to forward all arguments unprocessed to the VM
     set -f
     # run the VM and pass along all arguments as is
-    open "$DIR"/"vm/$VM/Pharo.app" --args --headless "$DIR"/PharoThings32.image 
+    "$DIR"/"vm/$VM/Pharo.app/Contents/MacOS/Pharo" --headless "$DIR"/PharoThings32.image $1 $2 $3
 elif [[ "{$VM}" = *linux64* ]]; then
-    vm/$VM/pharo --headless PharoThings64.image 
+    vm/$VM/pharo --headless PharoThings64.image $1 $2 $3
 elif [[ "{$VM}" = *linux32* ]]; then
-    vm/$VM/pharo --headless PharoThings32.image 
+    vm/$VM/pharo --headless PharoThings32.image $1 $2 $3
 fi' >> tmp/$VM_SCRIPT
 fi
 # make the script executable
