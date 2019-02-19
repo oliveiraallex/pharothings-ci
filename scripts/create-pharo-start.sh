@@ -1,5 +1,5 @@
 #!/bin/bash
-# Create the exec file (bash or bat) to select the correct VM and run Pharo image
+# Create the exec file (bash and bat) to select the correct VM and run Pharo image
 
 # CREATE THE VM LAUNCHER SCRIPTS ================================================
 create_vm_script() {
