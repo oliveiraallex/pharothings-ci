@@ -125,4 +125,4 @@ create_vm_script "pharo-server"
 # chmod +x tmp/pharo-server
 
 echo '@echo off
-start /min vm\win32\PharoConsole.exe PharoThings32.image' > tmp/pharo.bat
+start /min vm\win32\Pharo.exe PharoThings32.image' > tmp/pharo.bat
