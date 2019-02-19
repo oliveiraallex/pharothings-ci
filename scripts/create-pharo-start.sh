@@ -1,11 +1,11 @@
-#!/bin/sh
-# Create the exec file (bash or exe) to select the correct VM and run Pharo
+#!/bin/bash
+# Create the exec file (bash or bat) to select the correct VM and run Pharo image
 
 # CREATE THE VM LAUNCHER SCRIPTS ================================================
 create_vm_script() {
     VM_SCRIPT=$1
     
-    echo "#!/bin/sh" > tmp/$VM_SCRIPT
+    echo "#!/bin/bash" > tmp/$VM_SCRIPT
     echo '# Run the VM according the system architecture
 # Step 1 - Get the OS and architecture
 # 1.1 Getting the OS
@@ -52,7 +52,7 @@ fi
 
 # Step 2 - Running the correcty VM and Pharo image ' >> tmp/$VM_SCRIPT
 
-# only output the headless option if the VM_SCRIPT name does not include "ui"
+# create the correct start options to pharo, pharo-ui and pharo-server files
 if [[ "{$VM_SCRIPT}" = *ui* ]]; then
      echo 'if [[ "{$VM}" = *arm* ]]; then
 vm/$VM/pharo PharoThings32.image ;
@@ -118,11 +118,11 @@ chmod +x tmp/$VM_SCRIPT
 echo "Creating starter scripts pharo, pharo-ui and pharo-server"
 create_vm_script "pharo"
 create_vm_script "pharo-ui"
-#create_vm_script "pharo-server"
+create_vm_script "pharo-server"
 
-echo '#!/bin/sh
-vm/arm/pharo --headless PharoThings32.image remotePharo startServerOnPort=40423' > tmp/pharo-server
-chmod +x tmp/pharo-server
+# echo '#!/bin/bash
+# vm/arm/pharo --headless PharoThings32.image remotePharo startServerOnPort=40423' > tmp/pharo-server
+# chmod +x tmp/pharo-server
 
 echo '@echo off
 start /min vm\win32\PharoConsole.exe PharoThings32.image' > tmp/pharo.bat
