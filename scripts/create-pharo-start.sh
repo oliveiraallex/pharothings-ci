@@ -126,5 +126,3 @@ create_vm_script "pharo-server"
 
 echo '@echo off
 start /min vm\win32\PharoConsole.exe PharoThings32.image' > tmp/pharo.bat
-
-exit
