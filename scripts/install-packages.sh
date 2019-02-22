@@ -33,8 +33,16 @@ Metacello new
   repository: 'github://pharo-iot/PharoThings/src';
   load: #(RemoteDevServer Raspberry). $1
 Smalltalk saveSession. 
-"   
-# > /dev/null 2>&1
+" > /dev/null 2>&1
+
+# Setting Welcome PharoThings
+wget http://pharo.allexoliveira.com.br/welcomePharoThings.st
+./tmp/pharo32/pharo tmp/$TEMP_RASP_SER/PharoThings32.image st --save --quit welcomePharoThings.st
+./tmp/pharo32/pharo tmp/$TEMP_RASP_SER/PharoThings32.image eval --save "
+HelpBrowser allInstances do: #close.
+WelcomeHelp open.
+" > /dev/null 2>&1
+
 mkdir $TEMP_RASP_SER
 cp tmp/$TEMP_RASP_SER/PharoThings32.image $TEMP_RASP_SER
 cp tmp/$TEMP_RASP_SER/PharoThings32.changes $TEMP_RASP_SER
@@ -52,8 +60,7 @@ Metacello new
   repository: 'github://pharo-iot/PharoThings/src';
   load: 'RemoteDev'. $1
 Smalltalk saveSession. 
-" 
-# > /dev/null 2>&1
+" > /dev/null 2>&1
 mkdir $TEMP_RASP_SERCLI
 cp tmp/$TEMP_RASP_SERCLI/PharoThings32.image $TEMP_RASP_SERCLI
 cp tmp/$TEMP_RASP_SERCLI/PharoThings32.changes $TEMP_RASP_SERCLI
@@ -108,8 +115,7 @@ do: [ :each |
                 ('Removing ', each) logCr.
                 package removeFromSystem ] ]. $2
 Smalltalk saveSession. 
-"  
-# > /dev/null 2>&1
+" > /dev/null 2>&1
 rm -rf $VERSION/pharo-local
 } 
 remove_iceberg "$TEMP_RASP_SER"
@@ -134,8 +140,15 @@ Metacello new
   repository: 'github://pharo-iot/PharoThings/src';
   load: #(RemoteDevServer Raspberry). $1
 Smalltalk saveSession. 
-" 
-# > /dev/null 2>&1
+" > /dev/null 2>&1
+
+# Setting Welcome PharoThings
+./tmp/pharo64/pharo tmp/$TEMP_MULTI_SERCLI/PharoThings64.image st --save --quit welcomePharoThings.st
+./tmp/pharo64/pharo tmp/$TEMP_MULTI_SERCLI/PharoThings64.image eval --save "
+HelpBrowser allInstances do: #close.
+WelcomeHelp open.
+" > /dev/null 2>&1
+
 mkdir $TEMP_MULTI_SERCLI
 cp tmp/$TEMP_MULTI_SERCLI/PharoThings32.image $TEMP_MULTI_SERCLI
 cp tmp/$TEMP_MULTI_SERCLI/PharoThings32.changes $TEMP_MULTI_SERCLI
