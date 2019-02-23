@@ -71,7 +71,7 @@ cp tmp/pharo-server $TEMP_RASP_SERCLI
 # Coping files from Raspberry server client folder to Multiplatform
 cp -r tmp/$TEMP_RASP_SERCLI/ tmp/$TEMP_MULTI_SERCLI/
 
-# Removing Iceberg from Raspberry Server and Server Client image
+# Removing Iceberg from Raspberry Server and Server Client image # Incompatible with ARM VM
 remove_iceberg() {
     VERSION=$1
     ./tmp/pharo32/pharo $VERSION/PharoThings32.image eval "
