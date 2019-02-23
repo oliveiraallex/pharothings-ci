@@ -1,8 +1,8 @@
-# PharoThings Continuous Integration
+# PharoIoT Continuous Integration
 
 [![Build Status](https://travis-ci.org/oliveiraallex/pharothings-ci.svg?branch=master)](https://travis-ci.org/oliveiraallex/pharothings-ci)
 
-PharoThings CI is a seamless integration process created using Travis CI. This process generate a Pharo image with PharoThings already installed and ready to be runned in multiplatform (Raspberry, Linux, Windows, Mac) with 1 click files. You can see the files to download in **[Releases page](https://github.com/oliveiraallex/pharothings-ci/releases)**. All zip files for download are automatically created and deployed when a new tag is created here.
+PharoIoT CI is a seamless integration process created using Travis CI. This process generate a Pharo image with [TelePharo](https://github.com/dionisiydk/TelePharo) and [PharoThings](https://github.com/pharo-iot/PharoThings) already installed and ready to run in multiplatform (Raspberry, Linux, Windows, Mac) with 1 click files. You can see the files to download in **[Releases page](https://github.com/oliveiraallex/pharothings-ci/releases)**. All zip files for download are automatically created and deployed when a new tag is created here.
 
 You can run the scripts by yourself in your local machine (Linux, Mac). Clone this repository, go to scripts folder and run the script `./run-scripts`. If you wanna skip the PharoThings instalation, just run `./run-scripts noInstall`. You can see the results inside the folder results-$DATE. 
 
@@ -20,6 +20,10 @@ The process is basically:
 - Create 1 click multiplatform files
 - Create 3 zip files for download. You can see the description of each file below
 - Deploy the files in **[Releases page](https://github.com/oliveiraallex/pharothings-ci/releases)** when is created a new Tag. 
+
+# PharoThings how to use
+
+The desctiption below is a easy way to you start very fast using PharoThings to create your IoT projects. You can see PharoThings project in original repository: [PharoThings GitHub repository](https://github.com/pharo-iot/PharoThings)
 
 ## Download the zip file according to your scenario:
 There are 3 zip files with the VM and PharoThings already installed. 
