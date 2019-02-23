@@ -20,23 +20,23 @@ There are 3 zip files with the VM and PharoThings already installed.
 - **pharothings-server (Raspberry Pi)**
 This file has Pharo7, ARM VM and PharoThings **server** loaded;
 
-**[Zeroconf](http://pharo.allexoliveira.com.br/server)**:`wget -O - http://pharo.allexoliveira.com.br/server | bash`
-
-**[Download](http://pharo.allexoliveira.com.br/pharothings-server.zip)**:`wget http://pharo.allexoliveira.com.br/pharothings-server.zip`
+    **[Zeroconf](http://pharo.allexoliveira.com.br/server)**:`wget -O - http://pharo.allexoliveira.com.br/server | bash`
+    
+    **[Download](http://pharo.allexoliveira.com.br/pharothings-server.zip)**:`wget http://pharo.allexoliveira.com.br/pharothings-server.zip`
 
 - **pharothings-client (Raspberry Pi)**
 This file has Pharo7, ARM VM, PharoThings **server and client** loaded. This way you can to work in the Raspberry Pi directly connected in a screen and keyboard/mouse, using the developer PharoThings tools, like the Board Inspector;
 
-**[Zeroconf](http://pharo.allexoliveira.com.br/client)**:`wget -O - http://pharo.allexoliveira.com.br/client | bash`
-
-**[Download](http://pharo.allexoliveira.com.br/pharothings-client.zip)**:`wget http://pharo.allexoliveira.com.br/pharothings-client.zip`
+    **[Zeroconf](http://pharo.allexoliveira.com.br/client)**:`wget -O - http://pharo.allexoliveira.com.br/client | bash`
+    
+    **[Download](http://pharo.allexoliveira.com.br/pharothings-client.zip)**:`wget http://pharo.allexoliveira.com.br/pharothings-client.zip`
 
 - **pharothings-multi (Raspberry Pi, Linux, Windows, Mac)**
 This file has Pharo7, all VMs 32bit, PharoThings **server and client** loaded.
 
-**[Zeroconf](http://pharo.allexoliveira.com.br/multi)**:`wget -O - http://pharo.allexoliveira.com.br/multi | bash`
+    **[Zeroconf](http://pharo.allexoliveira.com.br/multi)**:`wget -O - http://pharo.allexoliveira.com.br/multi | bash`
 
-**[Download](http://pharo.allexoliveira.com.br/pharothings-multi.zip)**:`wget http://pharo.allexoliveira.com.br/pharothings-multi.zip`
+    **[Download](http://pharo.allexoliveira.com.br/pharothings-multi.zip)**:`wget http://pharo.allexoliveira.com.br/pharothings-multi.zip`
 
 ## Start files
 There are 4 files of *1 click start*. All of them start with the Pharo image already selected. You can use them according to your necessities:
