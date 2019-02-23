@@ -15,7 +15,7 @@ The process is basically:
 - Copy this image to a new folder (client-server) and install the PharoThings client
 - Copy this image to a new folder (multi)
 - Create a local Pharo7 64-bit environment
-- Install the 64-bit image of the PharoThings client server.
+- Install PharoThings (client-server) in 64-bit image.
 - Copy the VMs (Arm, Linux, Windows, Mac) to the vm folders
 - Create 1 click multiplatform files
 - Create 3 zip files for download. You can see the description of each file below

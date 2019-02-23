@@ -75,7 +75,7 @@ cp -r tmp/$TEMP_RASP_SERCLI/ tmp/$TEMP_MULTI_SERCLI/
 remove_iceberg() {
     VERSION=$1
     ./tmp/pharo32/pharo $VERSION/PharoThings32.image eval "
-$2 LGitLibrary shutDown: true.
+$1 LGitLibrary shutDown: true.
 IceMetacelloRepositoryAdapter allInstances do: #unregister.
 MetacelloPharoPlatform select.
 #(
@@ -113,7 +113,7 @@ do: [ :each |
         nil ])
             ifNotNil: [ :package |
                 ('Removing ', each) logCr.
-                package removeFromSystem ] ]. $2
+                package removeFromSystem ] ]. $1
 Smalltalk saveSession. 
 " > /dev/null 2>&1
 rm -rf $VERSION/pharo-local
