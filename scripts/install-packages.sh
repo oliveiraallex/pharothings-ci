@@ -118,8 +118,8 @@ Smalltalk saveSession.
 " > /dev/null 2>&1
 rm -rf $VERSION/pharo-local
 } 
-remove_iceberg "$TEMP_RASP_SER" $1
-remove_iceberg "$TEMP_RASP_SERCLI" $1
+remove_iceberg "$TEMP_RASP_SER" "$1"
+remove_iceberg "$TEMP_RASP_SERCLI" "$1"
 
 # Preparing Pharo 64 bit image
 cd tmp/$TEMP_MULTI_SERCLI/
