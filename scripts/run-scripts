@@ -11,7 +11,7 @@ cd result-$FOLDER_DATE
 ../create-pharo-start.sh
 
 # Setting skip PharoThings installation
-[[ "{$1}" = *noInstall* ]] && NOINSTALL=\"
+[[ "{$1}" = *no* ]] && NOINSTALL=\"
 ../install-packages.sh $NOINSTALL
 
 # Creating the Zip files

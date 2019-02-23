@@ -73,7 +73,7 @@ cp -r tmp/$TEMP_RASP_SERCLI/ tmp/$TEMP_MULTI_SERCLI/
 
 # Removing Iceberg from Raspberry Server and Server Client image # Incompatible with ARM VM
 remove_iceberg() {
-    VERSION=$1
+    VERSION=$2
     ./tmp/pharo32/pharo $VERSION/PharoThings32.image eval "
 $1 LGitLibrary shutDown: true.
 IceMetacelloRepositoryAdapter allInstances do: #unregister.
@@ -118,8 +118,8 @@ Smalltalk saveSession.
 " > /dev/null 2>&1
 rm -rf $VERSION/pharo-local
 } 
-remove_iceberg "$TEMP_RASP_SER"
-remove_iceberg "$TEMP_RASP_SERCLI"
+remove_iceberg $1 "$TEMP_RASP_SER"
+remove_iceberg $1 "$TEMP_RASP_SERCLI"
 
 # Preparing Pharo 64 bit image
 cd tmp/$TEMP_MULTI_SERCLI/

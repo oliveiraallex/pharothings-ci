@@ -10,6 +10,6 @@ FILE_DATE=last
 
 mkdir download
 
-zip -qr download/$TEMP_RASP_SER.zip $TEMP_RASP_SER
-zip -qr download/$TEMP_RASP_SERCLI.zip $TEMP_RASP_SERCLI
-zip -qry download/$TEMP_MULTI_SERCLI.zip $TEMP_MULTI_SERCLI
+zip -qr9 download/$TEMP_RASP_SER.zip $TEMP_RASP_SER
+zip -qr9 download/$TEMP_RASP_SERCLI.zip $TEMP_RASP_SERCLI
+zip -qry9 download/$TEMP_MULTI_SERCLI.zip $TEMP_MULTI_SERCLI
