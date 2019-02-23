@@ -2,7 +2,7 @@
 
 PharoThings CI is a seamless integration process created using Travis CI. This process generate a Pharo image with PharoThings already installed and ready to be runned in multiplatform (Raspberry, Linux, Windows, Mac) with 1 click files. 
 
-All zip files for download are created automatically. The process is basically:
+You can see the files to download in **[Releases page](https://github.com/oliveiraallex/pharothings-ci/releases)**. All zip files for download are created automatically. The process is basically:
 
 - Create a local Pharo7 32-bit environment
 - Install PharoThings (server)
@@ -12,7 +12,8 @@ All zip files for download are created automatically. The process is basically:
 - Install the 64-bit image of the PharoThings client server.
 - Copy the VMs (Arm, Linux, Windows, Mac) to the vm folders
 - Create 1 click multiplatform files
-- Create 3 zip files for download. You can see the description of each file below.
+- Create 3 zip files for download. You can see the description of each file below
+- Deploy the files in **[Releases page](https://github.com/oliveiraallex/pharothings-ci/releases)** when is created a new Tag. 
 
 ## Download the zip file according to your scenario:
 There are 3 zip files with the VM and PharoThings already installed. 
