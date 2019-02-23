@@ -8,8 +8,9 @@ You can run the scripts by yourself in your local machine (Linux, Mac). Clone th
 
 In this way, **you can help us to improve this CI process**: Just clone this repository, do the modifications testing the scripts in your local machine (Linux, Mac) and submit a Pull Request with your modifications.
 
-The process is basically:
+There are 4 script files (download.sh, create-pharo-start.sh, install-packages.sh and upload.sh). They basically do:
 
+- Download the VM files
 - Create a local Pharo7 32-bit environment
 - Install PharoThings (server)
 - Copy this image to a new folder (client-server) and install the PharoThings client
@@ -19,7 +20,7 @@ The process is basically:
 - Copy the VMs (Arm, Linux, Windows, Mac) to the vm folders
 - Create 1 click multiplatform files
 - Create 3 zip files for download. You can see the description of each file below
-- Deploy the files in **[Releases page](https://github.com/oliveiraallex/pharothings-ci/releases)** when is created a new Tag. 
+- And Travis CI deploy the files in **[Releases page](https://github.com/oliveiraallex/pharothings-ci/releases)** when is created a new Tag. 
 
 # PharoThings how to use
 
