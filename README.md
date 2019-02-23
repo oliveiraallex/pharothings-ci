@@ -1,6 +1,12 @@
-# pharothings-ci
+# PharoThings Continuous Integration
+
+[![Build Status](https://travis-ci.org/oliveiraallex/pharothings-ci.svg?branch=master)](https://travis-ci.org/oliveiraallex/pharothings-ci)
 
 PharoThings CI is a seamless integration process created using Travis CI. This process generate a Pharo image with PharoThings already installed and ready to be runned in multiplatform (Raspberry, Linux, Windows, Mac) with 1 click files. 
+
+You can run the scripts by yourself in your local machine (Linux, Mac). Clone this repository, go to scripts folder and run the script `./run-scripts`. If you wanna skip the PharoThings instalation, just run `./run-scripts noInstall`. You can see the results inside the folder results-$DATE. 
+
+This way you can help improve this process: Just clone this repository, do the modifications, run the scripts in your local machine and submit a Pull Request. 
 
 You can see the files to download in **[Releases page](https://github.com/oliveiraallex/pharothings-ci/releases)**. All zip files for download are created automatically. The process is basically:
 

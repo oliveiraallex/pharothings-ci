@@ -36,8 +36,8 @@ Smalltalk saveSession.
 " > /dev/null 2>&1
 
 # Setting Welcome PharoThings
-wget http://pharo.allexoliveira.com.br/welcomePharoThings.st
-./tmp/pharo32/pharo tmp/$TEMP_RASP_SER/PharoThings32.image st --save --quit welcomePharoThings.st
+wget -P tmp http://pharo.allexoliveira.com.br/welcomePharoThings.st
+./tmp/pharo32/pharo tmp/$TEMP_RASP_SER/PharoThings32.image st --save --quit tmp/welcomePharoThings.st
 ./tmp/pharo32/pharo tmp/$TEMP_RASP_SER/PharoThings32.image eval --save "
 HelpBrowser allInstances do: #close.
 WelcomeHelp open.
@@ -143,7 +143,7 @@ Smalltalk saveSession.
 " > /dev/null 2>&1
 
 # Setting Welcome PharoThings
-./tmp/pharo64/pharo tmp/$TEMP_MULTI_SERCLI/PharoThings64.image st --save --quit welcomePharoThings.st
+./tmp/pharo64/pharo tmp/$TEMP_MULTI_SERCLI/PharoThings64.image st --save --quit tmp/welcomePharoThings.st
 ./tmp/pharo64/pharo tmp/$TEMP_MULTI_SERCLI/PharoThings64.image eval --save "
 HelpBrowser allInstances do: #close.
 WelcomeHelp open.
