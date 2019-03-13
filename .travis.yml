@@ -33,3 +33,6 @@ deploy:
   on:
     tags: true
     repo: oliveiraallex/pharothings-ci
+
+after_deploy:
+- "./scripts/update-htaccess.sh"
