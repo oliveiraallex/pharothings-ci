@@ -1,0 +1,7 @@
+# BEGIN Redirect zip file
+<IfModule mod_rewrite.c>
+    RewriteRule ^server\.zip$ https://github.com/oliveiraallex/pharothings-ci/releases/download/v0.11/pharothings-server.zip [R=302]
+    RewriteRule ^client\.zip$ https://github.com/oliveiraallex/pharothings-ci/releases/download/v0.11/pharothings-client.zip [R=302]
+    RewriteRule ^multi\.zip$ https://github.com/oliveiraallex/pharothings-ci/releases/download/v0.11/pharothings-multi.zip [R=302]
+</IfModule>
+# END Redirect zip file
