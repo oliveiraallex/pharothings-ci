@@ -2,7 +2,6 @@
 
 set -ex
 
-rm -r docs/*.zip
 cp download/server.zip docs/
 cp download/client.zip docs/
 cp download/multi.zip docs/
