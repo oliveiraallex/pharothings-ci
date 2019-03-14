@@ -8,7 +8,7 @@ cp download/multi.zip docs/
 
 git config --global user.email "allex.oliveira@yahoo.com.br"
 git config --global user.name "Allex Oliveira"
-git checkout master
+git checkout -b master --track origin/master
 git add docs/*.zip
 git commit -m "Travis upload"
 git push http://oliveiraallex:${GH}@github.com/oliveiraallex/pharothings-ci.git
