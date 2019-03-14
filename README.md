@@ -31,23 +31,23 @@ There are 3 zip files with the VM and PharoThings already installed.
 - **pharothings-server (Raspberry Pi)**
 This file has Pharo7, ARM VM and PharoThings **server** loaded;
 
-    **[Zeroconf](http://pharo.allexoliveira.com.br/server)**:`wget -O - http://pharo.allexoliveira.com.br/server | bash`
+    [Zeroconf](http://get.pharoiot.com/server):`wget -O - get.pharoiot.com/server | bash`
     
-    **[Download](http://pharo.allexoliveira.com.br/pharothings-server.zip)**:`wget http://pharo.allexoliveira.com.br/pharothings-server.zip`
+    **[Download](http://get.pharoiot.com/server.zip)**:`wget get.pharoiot.com/server.zip`
 
 - **pharothings-client (Raspberry Pi)**
 This file has Pharo7, ARM VM, PharoThings **server and client** loaded. This way you can to work in the Raspberry Pi directly connected in a screen and keyboard/mouse, using the developer PharoThings tools, like the Board Inspector;
 
-    **[Zeroconf](http://pharo.allexoliveira.com.br/client)**:`wget -O - http://pharo.allexoliveira.com.br/client | bash`
+    [Zeroconf](http://get.pharoiot.com/client):`wget -O - get.pharoiot.com/client | bash`
     
-    **[Download](http://pharo.allexoliveira.com.br/pharothings-client.zip)**:`wget http://pharo.allexoliveira.com.br/pharothings-client.zip`
+    **[Download](http://get.pharoiot.com/client.zip)**:`wget get.pharoiot.com/client.zip`
 
 - **pharothings-multi (Raspberry Pi, Linux, Windows, Mac)**
 This file has Pharo7, all VMs 32bit, PharoThings **server and client** loaded.
 
-    **[Zeroconf](http://pharo.allexoliveira.com.br/multi)**:`wget -O - http://pharo.allexoliveira.com.br/multi | bash`
+    [Zeroconf](http://get.pharoiot.com/multi):`wget -O - get.pharoiot.com/multi | bash`
 
-    **[Download](http://pharo.allexoliveira.com.br/pharothings-multi.zip)**:`wget http://pharo.allexoliveira.com.br/pharothings-multi.zip`
+    **[Download](http://get.pharoiot.com/multi.zip)**:`wget get.pharoiot.com/multi.zip`
 
 ## Start files
 There are 4 files of *1 click start*. All of them start with the Pharo image already selected. You can use them according to your necessities:
@@ -80,4 +80,24 @@ remotePharo openProcessBrowser.
 
 ## Playing with PharoThings Booklet
 You can start playing with LEDs, sensors and learn how to build your **Mini-Weather Station** to shows the temperature and other parameters in an LCD display, and send the data to a cloud server. 
-All this content and lessons are written in the **PharoThings Booklet**, you can access it here: [PharoThings Booklet](https://github.com/SquareBracketAssociates/Booklet-APharoThingTutorial/blob/master/_result/pdf/index.pdf) 
+All this content and lessons are written in the **PharoThings Booklet**, you can access it here: [PharoThings Booklet](https://github.com/SquareBracketAssociates/Booklet-APharoThingsTutorial) 
+
+# Raspberry Pi Headless Instalation
+You can install the Operation System (Raspbian) in your Raspberry Pi and do all configuration without keyboard/mouse/screen. With this method you will automaticaly:
+
+- Set the hostname
+- Set boot to console
+- Enable the I2C and SPI modules
+- Connect in your WiFi network
+- Download PharoThings
+- and start the server every boot
+
+Download the PiBakery: [PiBakery Download](https://www.pibakery.org/download.html)
+
+Download the XML configuration file: [PiBakery PharoThings Configuration](http://get.pharoiot.com/pibakeryPharoThings.xml)
+
+1. Import this XML file in PiBakery
+2. Change your hostname and WiFi configuration
+3. Insert the SD card in your machine, click in Write and select the Operation System Raspbian Full
+4. After the process, insert the SD in the Raspberry and wait around 2 minutes to it finish the automatic configuration
+5. Now you can find your Raspberry by hostname that you set before
