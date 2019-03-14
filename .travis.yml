@@ -18,7 +18,7 @@ install:
 - "./scripts/download.sh"
 - "./scripts/create-pharo-start.sh"
 - "./scripts/install-packages.sh"
-- "./scripts/upload.sh"
+- "./scripts/create-zip-files.sh"
 
 script:
 - echo " "
@@ -35,4 +35,4 @@ deploy:
     repo: oliveiraallex/pharothings-ci
 
 after_deploy:
-- "./scripts/update-htaccess.sh"
+- "./scripts/upload.sh"

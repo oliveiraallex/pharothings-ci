@@ -2,12 +2,12 @@
 
 set -ex
 
-TEMP_RASP_SER=pharothings-server
-TEMP_RASP_SERCLI=pharothings-client
-TEMP_MULTI_SERCLI=pharothings-multi
+cp download/server.zip docs/
+cp download/client.zip docs/
+cp download/multi.zip docs/
 
-mkdir download
-
-zip -qr9 download/server.zip $TEMP_RASP_SER
-zip -qr9 download/client.zip $TEMP_RASP_SERCLI
-zip -qry9 download/multi.zip $TEMP_MULTI_SERCLI
+git checkout master
+git add docs/*.zip
+git add -u
+git commit -m "Travis upload"
+git push http://oliveiraallex:${GH}@github.com/oliveiraallex/pharothings-ci.git > /dev/null 2>&1
