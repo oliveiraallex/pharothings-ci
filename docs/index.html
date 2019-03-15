@@ -9,7 +9,7 @@
 
   gtag('config', 'UA-5301477-18');
 </script>
-<title>PharoThings Installation Guide</title>
+<title>Pharo IoT Installation Guide</title>
 <style>
 BODY, TABLE { 
 	font-family: Arial;
@@ -34,26 +34,26 @@ A {
 </style>
 </head>
 <body>
-<h1>PharoThings Installation Guide</h1>    
+<h1>Pharo IoT Installation Guide</h1>    
 <div class="markdown-body">
     <h2>Download the zip file according to your scenario:</h2>
-<p>There are 3 zip files with the VM and PharoThings already installed.</p>
+<p>There are 3 zip files with the VM and Pharo IoT already installed.</p>
 <ul>
 <li>
-<p><strong>pharothings-server</strong> (Raspberry Pi)<br>
-This file has Pharo7, ARM VM and PharoThings <strong>server</strong> loaded;<br>
+<p><strong>pharoiot-server</strong> (Raspberry Pi)<br>
+This file has Pharo7, ARM VM and Pharo IoT <strong>server</strong> loaded;<br>
 <strong><a href="http://get.pharoiot.com/server" rel="nofollow" >Zeroconf</a></strong>:<code>wget -O - get.pharoiot.com/server | bash</code><br>
 <strong><a href="http://get.pharoiot.com/server.zip" rel="nofollow">Download</a></strong>:<code>wget get.pharoiot.com/server.zip</code></p>
 </li>
 <li>
-<p><strong>pharothings-client</strong> (Raspberry Pi)<br>
-This file has Pharo7, ARM VM, PharoThings <strong>server and client</strong> loaded. This way you can to work in the Raspberry Pi directly connected in a screen and keyboard/mouse, using the developer PharoThings tools, like the Board Inspector;<br>
+<p><strong>pharoiot-client</strong> (Raspberry Pi)<br>
+This file has Pharo7, ARM VM, Pharo IoT <strong>server and client</strong> loaded. This way you can to work in the Raspberry Pi directly connected in a screen and keyboard/mouse, using the developer PharoThings tools, like the Board Inspector;<br>
 <strong><a href="http://get.pharoiot.com/client" rel="nofollow">Zeroconf</a></strong>:<code>wget -O - get.pharoiot.com/client | bash</code><br>
 <strong><a href="http://get.pharoiot.com/client.zip" rel="nofollow">Download</a></strong>:<code>wget get.pharoiot.com/client.zip</code></p>
 </li>
 <li>
-<p><strong>pharothings-multi</strong> (Raspberry Pi, Linux, Windows, Mac)<br>
-This file has Pharo7, all VMs 32bit, PharoThings <strong>server and client</strong> loaded.<br>
+<p><strong>pharoiot-multi</strong> (Raspberry Pi, Linux, Windows, Mac)<br>
+This file has Pharo7, all VMs 32bit, Pharo IoT <strong>server and client</strong> loaded.<br>
 <strong><a href="http://get.pharoiot.com/multi" rel="nofollow">Zeroconf</a></strong>:<code>wget -O - get.pharoiot.com/multi | bash</code><br>
 <strong><a href="http://get.pharoiot.com/multi.zip" rel="nofollow">Download</a></strong>:<code>wget get.pharoiot.com/multi.zip</code></p>
 </li>
@@ -73,7 +73,7 @@ Open Pharo User Interface on Microsoft Windows.</li>
 <h2>Connecting</h2>
 <ol>
 <li>Start the <strong>pharo-server</strong> on Raspberry Pi.</li>
-<li>Run the PharoThings client: <strong>pharo-ui</strong> (Mac, Linux) or <strong>pharo.bat</strong> (Windows). Open the Playground, type and run this line (cmd + D):</li>
+<li>Run the Pharo IoT client: <strong>pharo-ui</strong> (Mac, Linux) or <strong>pharo.bat</strong> (Windows). Open the Playground, type and run this line (cmd + D):</li>
 </ol>
 <pre><code>remotePharo := TlpRemoteIDE connectTo: (TCPAddress ip: #[192 168 1 200] port: 40423).
 </code></pre>
@@ -88,7 +88,7 @@ remoteBoard inspect.
 remotePharo openBrowser.
 remotePharo openProcessBrowser.
 </code></pre>
-<h2>Playing with PharoThings Booklet</h2>
+<h2>Playing with Pharo IoT Booklet</h2>
 <p>You can start playing with LEDs, sensors and learn how to build your <strong>Mini-Weather Station</strong> to shows the temperature and other parameters in an LCD display, and send the data to a cloud server.<br>
 All this content and lessons are written in the <strong>PharoThings Booklet</strong>, you can access it here: <a href="https://github.com/SquareBracketAssociates/Booklet-APharoThingsTutorial/" target="_blank">PharoThings Booklet</a></p>
   </div>
@@ -99,11 +99,11 @@ All this content and lessons are written in the <strong>PharoThings Booklet</str
 <li>Set boot to console</li>
 <li>Enable the I2C and SPI modules</li>
 <li>Connect in your WiFi network</li>
-<li>Download PharoThings</li>
+<li>Download Pharo IoT</li>
 <li>and start the server every boot</li>
 </ul>
 <p>Download the PiBakery: <a href="https://www.pibakery.org/download.html" rel="nofollow" target="_blank">PiBakery Download</a>
-<br>Download the conf file: <a href="http://get.pharoiot.com/pibakeryPharoThings.xml" download >PiBakery PharoThings Configuration</a></p>
+<br>Download the conf file: <a href="http://get.pharoiot.com/pibakeryPharoIoT.xml" download >PiBakery Pharo IoT Configuration</a></p>
 <ol>
 <li>Import this conf file in PiBakery</li>
 <li>Change your hostname and WiFi configuration</li>

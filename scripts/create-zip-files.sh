@@ -2,9 +2,9 @@
 
 set -ex
 
-TEMP_RASP_SER=pharothings-server
-TEMP_RASP_SERCLI=pharothings-client
-TEMP_MULTI_SERCLI=pharothings-multi
+TEMP_RASP_SER=pharoiot-server
+TEMP_RASP_SERCLI=pharoiot-client
+TEMP_MULTI_SERCLI=pharoiot-multi
 
 mkdir download
 
