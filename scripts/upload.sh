@@ -6,6 +6,7 @@ cp download/server.zip docs/
 cp download/client.zip docs/
 cp download/multi.zip docs/
 
+git fetch --unshallow
 git checkout master
 git add docs/*.zip
 git add -u
