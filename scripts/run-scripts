@@ -15,6 +15,6 @@ cd result-$FOLDER_DATE
 ../install-packages.sh $NOINSTALL
 
 # Creating the Zip files
-../upload.sh
+../create-zip-files.sh
 
 exit
