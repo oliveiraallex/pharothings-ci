@@ -5,7 +5,7 @@ set -ex
 TEMP_RASP_SER=pharoiot-server
 TEMP_RASP_SERCLI=pharoiot-client
 TEMP_MULTI_SERCLI=pharoiot-multi
-
+LAST_TAG_PHAROTHINGS=`curl --silent https://api.github.com/repos/pharo-iot/PharoThings/tags | grep name | head -1 | cut -d'"' -f4`
 # Step 1 - Prepare images
 
 # 1.1 Download the PharoVM for the current platform
@@ -30,18 +30,18 @@ cd ../..
 $1 Iceberg enableMetacelloIntegration: true.
 Metacello new
   baseline: 'PharoThings';
-  repository: 'github://pharo-iot/PharoThings/src';
+  repository: 'github://pharo-iot/PharoThings:$LAST_TAG_PHAROTHINGS/src';
   load: #(RemoteDevServer Raspberry). $1
 Smalltalk saveSession. 
 " > /dev/null 2>&1
 
 # Setting Welcome PharoThings
-wget -P tmp http://pharo.allexoliveira.com.br/welcomePharoThings.st
-./tmp/pharo32/pharo tmp/$TEMP_RASP_SER/PharoThings32.image st --save --quit tmp/welcomePharoThings.st
+wget -P tmp http://get.pharoiot.org/welcomePharoIoT.st
+./tmp/pharo32/pharo tmp/$TEMP_RASP_SER/PharoThings32.image st --save --quit tmp/welcomePharoIoT.st
 ./tmp/pharo32/pharo tmp/$TEMP_RASP_SER/PharoThings32.image eval --save "
 HelpBrowser allInstances do: #close.
 WelcomeHelp open.
-" > /dev/null 2>&1
+" 
 
 mkdir $TEMP_RASP_SER
 cp tmp/$TEMP_RASP_SER/PharoThings32.image $TEMP_RASP_SER
@@ -57,7 +57,7 @@ cp -r tmp/$TEMP_RASP_SER/ tmp/$TEMP_RASP_SERCLI/
 $1 Iceberg enableMetacelloIntegration: true.
 Metacello new
   baseline: 'PharoThings';
-  repository: 'github://pharo-iot/PharoThings/src';
+  repository: 'github://pharo-iot/PharoThings:$LAST_TAG_PHAROTHINGS/src';
   load: 'RemoteDev'. $1
 Smalltalk saveSession. 
 " > /dev/null 2>&1
@@ -133,21 +133,21 @@ cd ../..
 $1 Iceberg enableMetacelloIntegration: true.
 Metacello new
   baseline: 'PharoThings';
-  repository: 'github://pharo-iot/PharoThings/src';
+  repository: 'github://pharo-iot/PharoThings:$LAST_TAG_PHAROTHINGS/src';
   load: 'RemoteDev'.
 Metacello new
   baseline: 'PharoThings';
-  repository: 'github://pharo-iot/PharoThings/src';
+  repository: 'github://pharo-iot/PharoThings:$LAST_TAG_PHAROTHINGS/src';
   load: #(RemoteDevServer Raspberry). $1
 Smalltalk saveSession. 
 " > /dev/null 2>&1
 
 # Setting Welcome PharoThings
-./tmp/pharo64/pharo tmp/$TEMP_MULTI_SERCLI/PharoThings64.image st --save --quit tmp/welcomePharoThings.st
+./tmp/pharo64/pharo tmp/$TEMP_MULTI_SERCLI/PharoThings64.image st --save --quit tmp/welcomePharoIoT.st
 ./tmp/pharo64/pharo tmp/$TEMP_MULTI_SERCLI/PharoThings64.image eval --save "
 HelpBrowser allInstances do: #close.
 WelcomeHelp open.
-" > /dev/null 2>&1
+" 
 
 mkdir $TEMP_MULTI_SERCLI
 cp tmp/$TEMP_MULTI_SERCLI/PharoThings32.image $TEMP_MULTI_SERCLI
@@ -188,4 +188,4 @@ mkdir -p $TEMP_MULTI_SERCLI/vm/linux64
 unzip -qo tmp/pharo64-linux-stable.zip -d $TEMP_MULTI_SERCLI/vm/linux64
 
 # Clean up temp folders
-#rm -rf tmp
+# rm -rf tmp

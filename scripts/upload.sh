@@ -2,12 +2,14 @@
 
 set -ex
 
-git clone --depth=1 --branch=master https://github.com/oliveiraallex/pharothings-ci.git
-cp download/server.zip pharothings-ci/docs/
-cp download/multi.zip pharothings-ci/docs/
-cp download/client.zip pharothings-ci/docs/
-cd pharothings-ci
+git clone --depth=1 --branch=master https://github.com/pharo-iot/Ci.git
+cp download/server.zip Ci/docs/
+cp download/multi.zip Ci/docs/
+cp download/client.zip Ci/docs/
+cd Ci
+git config --global user.email "allex.oliveira@yahoo.com.br"
+git config --global user.name "Allex Oliveira"
 git checkout master
 git add docs/*.zip
-git commit -m "Travis upload"
-git push http://oliveiraallex:${GH}@github.com/oliveiraallex/pharothings-ci.git > /dev/null 2>&1
+git commit -m "Travis upload release files"
+git push "https://pharo-iot:${GH_TOKEN}@github.com/pharo-iot/Ci.git" master
